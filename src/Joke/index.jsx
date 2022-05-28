@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-/* const jokes = [
+export const jokes = [
   {
     id: 'user01',
     avatar:
@@ -83,7 +83,7 @@ import './style.css';
     likes: 42,
     dislikes: 9,
   },
-]; */
+];
 
 let upLikes = 0;
 let downLikes = 0;
@@ -106,18 +106,11 @@ export const Joke = ({ userAvatar, userName, text, likes, dislikes }) => {
       <div className="joke">
         <div className="joke__body">
           <div className="joke__user">
-            <img
-              className="user-avatar"
-              src="https://raw.githubusercontent.com/Czechitas-podklady-WEB/dadjokes/main/users/user01.png"
-            />
-            <p className="user-name">Neroxx</p>
+            <img className="user-avatar" src={userAvatar} />
+            <p className="user-name">{userName}</p>
           </div>
 
-          <p className="joke__text">
-            The secret service isn't allowed to yell "Get down!" anymore when
-            the president is about to be attacked. Now they have to yell
-            "Donald, duck!"
-          </p>
+          <p className="joke__text">{text}</p>
         </div>
         <div className="joke__likes">
           <button
@@ -126,7 +119,7 @@ export const Joke = ({ userAvatar, userName, text, likes, dislikes }) => {
             onClick={buttonUp}
           ></button>
           <span id="likes-up" className="likes-count likes-count--up">
-            0
+            {likes}
           </span>
           <button
             id="btn-down"
@@ -134,7 +127,7 @@ export const Joke = ({ userAvatar, userName, text, likes, dislikes }) => {
             onClick={buttonDown}
           ></button>
           <span id="likes-down" className="likes-count likes-count--down">
-            0
+            {dislikes}
           </span>
         </div>
       </div>
