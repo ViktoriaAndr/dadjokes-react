@@ -10,7 +10,7 @@ const App = () => (
       <Joke
         key={joke.id}
         userAvatar={joke.avatar}
-        userName={joke.name}
+        userName={joke.Username}
         text={joke.text}
         likes={joke.likes}
         dislikes={joke.dislikes}
